@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuvadia Adventure Convoy · July 2026 · Shenandoah</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <style>
+  /* ─── MVP.css base — your personal site styles ─────────────────────────── */
+  :root {
+      --border-radius: 5px;
+      --box-shadow: 2px 2px 10px;
+      --color: #118bee;
+      --color-accent: #118bee15;
+      --color-bg: #fff;
+      --color-bg-secondary: #e9e9e9;
+      --color-secondary: #920de9;
+      --color-secondary-accent: #920de90b;
+      --color-shadow: #f4f4f4;
+      --color-text: #000;
+      --color-text-secondary: #999;
+      --font-family: Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      --hover-brightness: 1.2;
+      --justify-important: center;
+      --justify-normal: left;
+      --line-height: 1.5;
+      --width-card: 285px;
+      --width-card-medium: 460px;
+      --width-card-wide: 800px;
+      /* --width-content: 1080px; */
+      --width-content: 850px;
+  }
+
+  html {
+    font-size: 18px; }
+
+  /* Layout */
+  article aside {
+      background: var(--color-secondary-accent);
+      border-left: 4px solid var(--color-secondary);
+      padding: 0.01rem 0.8rem;
+  }
+
+  body {
+      background: var(--color-bg);
+      color: var(--color-text);
+      /* font-family: var(--font-family); */
+      font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+      line-height: 1.5;
+      /* font-size: 100%; */
+      /* line-height: var(--line-height); */
+      overflow-x: hidden;
+      padding: 1rem 0;
+  }
+
+  img{
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 600px;
+
+  }
+
+  footer,
+  header,
+  main {
+      margin: 0 auto;
+      max-width: var(--width-content);
+      padding: 2rem 1rem;
+  }
+
+  hr {
+      background-color: var(--color-bg-secondary);
+      border: none;
+      height: 1px;
+      margin: 2rem 0;
+  }
+
+  section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: var(--justify-important);
+  }
+
+  section aside {
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow) var(--color-shadow);
+      margin: 1rem;
+      padding: 1.25rem;
+      width: var(--width-card);
+  }
+
+  section aside:hover {
+      box-shadow: var(--box-shadow) var(--color-bg-secondary);
+  }
+
+  section aside img {
+      max-width: 100%;
+  }
+
+  [hidden] {
+      display: none;
+  }
+
+  /* Headers */
+  article header,
+  div header,
+  main header {
+      padding-top: 0;
+  }
+
+  header {
+      text-align: var(--justify-important);
+  }
+
+  header a b,
+  header a em,
+  header a i,
+  header a strong {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+  }
+
+  header nav img {
+      margin: 1rem 0;
+  }
+
+  section header {
+      padding-top: 0;
+      width: 100%;
+  }
+
+  /* Nav */
+  nav {
+      align-items: center;
+      display: flex;
+      font-weight: bold;
+      justify-content: space-between;
+      /* margin-bottom: 4rem; */
+  }
+
+  nav ul {
+      list-style: none;
+      padding: 0;
+  }
+
+  nav ul li {
+      display: inline-block;
+      margin: 0 0.5rem;
+      position: relative;
+      text-align: left;
+  }
+
+  /* Nav Dropdown */
+  nav ul li:hover ul {
+      display: block;
+  }
+
+  nav ul li ul {
+      background: var(--color-bg);
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow) var(--color-shadow);
+      display: none;
+      height: auto;
+      left: -2px;
+      padding: .5rem 1rem;
+      position: absolute;
+      top: 1.7rem;
+      white-space: nowrap;
+      width: auto;
+  }
+
+  nav ul li ul li,
+  nav ul li ul li a {
+      display: block;
+  }
+
+  /* Typography */
+  code,
+  samp {
+      background-color: var(--color-accent);
+      border-radius: var(--border-radius);
+      color: var(--color-text);
+      display: inline-block;
+      margin: 0 0.1rem;
+      padding: 0 0.5rem;
+  }
+
+  details {
+      margin: 1.3rem 0;
+  }
+
+  details summary {
+      font-weight: bold;
+      cursor: pointer;
+  }
+
+  /* h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      line-height: var(--line-height);
+  } */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 900;
+    line-height: 1.25;
+    /* margin-top: 1em; */
+    margin-bottom: .5em; }
+
+
+  mark {
+      padding: 0.1rem;
+  }
+
+  ol li,
+  ul li {
+      padding: 0.2rem 0;
+  }
+
+  p {
+      margin: 0.75rem 0;
+      padding: 0;
+  }
+
+  pre {
+      margin: 1rem 0;
+      max-width: var(--width-card-wide);
+      padding: 1rem 0;
+  }
+
+  pre code,
+  pre samp {
+      display: block;
+      max-width: var(--width-card-wide);
+      padding: 0.5rem 2rem;
+      white-space: pre-wrap;
+  }
+
+  small {
+      color: var(--color-text-secondary);
+  }
+
+  sup {
+      background-color: var(--color-secondary);
+      border-radius: var(--border-radius);
+      color: var(--color-bg);
+      font-size: xx-small;
+      font-weight: bold;
+      margin: 0.2rem;
+      padding: 0.2rem 0.3rem;
+      position: relative;
+      top: -2px;
+  }
+
+  /* Links */
+  a {
+      /* color: var(--color-secondary); */
+      /* display: inline-block; */
+      /* font-weight: bold; */
+      text-decoration: none;
+      color: #0076df;
+  }
+
+  a:hover {
+      filter: brightness(var(--hover-brightness));
+      text-decoration: none;
+  }
+
+  a b,
+  a em,
+  a i,
+  a strong,
+  button {
+      border-radius: var(--border-radius);
+      display: inline-block;
+      font-size: large;
+      font-weight: bold;
+      line-height: var(--line-height);
+      margin: 0.5rem 0;
+      padding: 1rem 2rem;
+  }
+
+  button {
+      font-family: var(--font-family);
+  }
+
+  button:hover {
+      cursor: pointer;
+      filter: brightness(var(--hover-brightness));
+  }
+
+  a b,
+  a strong,
+  button {
+      background-color: var(--color);
+      border: 2px solid var(--color);
+      color: var(--color-bg);
+  }
+
+  a em,
+  a i {
+      border: 2px solid var(--color);
+      border-radius: var(--border-radius);
+      color: var(--color);
+      display: inline-block;
+      padding: 1rem 2rem;
+  }
+
+  /* Images */
+  figure {
+      margin: 0;
+      padding: 0;
+  }
+
+  figure img {
+      max-width: 100%;
+  }
+
+  figure figcaption {
+      color: var(--color-text-secondary);
+  }
+
+  /* Forms */
+
+  button:disabled,
+  input:disabled {
+      background: var(--color-bg-secondary);
+      border-color: var(--color-bg-secondary);
+      color: var(--color-text-secondary);
+      cursor: not-allowed;
+  }
+
+  button[disabled]:hover {
+      filter: none;
+  }
+
+  form {
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow) var(--color-shadow);
+      display: block;
+      max-width: var(--width-card-wide);
+      min-width: var(--width-card);
+      padding: 1.5rem;
+      text-align: var(--justify-normal);
+  }
+
+  form header {
+      margin: 1.5rem 0;
+      padding: 1.5rem 0;
+  }
+
+  input,
+  label,
+  select,
+  textarea {
+      display: block;
+      font-size: inherit;
+      max-width: var(--width-card-wide);
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+      display: inline-block;
+  }
+
+  input[type="checkbox"]+label,
+  input[type="radio"]+label {
+      display: inline-block;
+      font-weight: normal;
+      position: relative;
+      top: 1px;
+  }
+
+  input,
+  select,
+  textarea {
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      margin-bottom: 1rem;
+      padding: 0.4rem 0.8rem;
+  }
+
+  input[readonly],
+  textarea[readonly] {
+      background-color: var(--color-bg-secondary);
+  }
+
+  label {
+      font-weight: bold;
+      margin-bottom: 0.2rem;
+  }
+
+  /* Tables */
+  table {
+      border: 1px solid var(--color-bg-secondary);
+      border-radius: var(--border-radius);
+      border-spacing: 0;
+      display: inline-block;
+      max-width: 100%;
+      overflow-x: auto;
+      padding: 0;
+      white-space: nowrap;
+  }
+
+  table td,
+  table th,
+  table tr {
+      padding: 0.4rem 0.8rem;
+      text-align: var(--justify-important);
+  }
+
+  table thead {
+      background-color: var(--color);
+      border-collapse: collapse;
+      border-radius: var(--border-radius);
+      color: var(--color-bg);
+      margin: 0;
+      padding: 0;
+  }
+
+  table thead th:first-child {
+      border-top-left-radius: var(--border-radius);
+  }
+
+  table thead th:last-child {
+      border-top-right-radius: var(--border-radius);
+  }
+
+  table thead th:first-child,
+  table tr td:first-child {
+      text-align: var(--justify-normal);
+  }
+
+  table tr:nth-child(even) {
+      background-color: var(--color-accent);
+  }
+
+  /* Quotes */
+  blockquote {
+      display: block;
+      /* font-size: x-large; */
+      line-height: var(--line-height);
+      /* margin: 1rem auto; */
+      /* max-width: var(--width-card-medium); */
+      padding: 1.5rem 1rem;
+      /* text-align: var(--justify-important); */
+      border-left: 5px solid #7a7a7a;
+      font-style: italic;
+      margin-left: 0.5rem;
+      padding: 0.5rem;
+      font-size: 18px;
+  }
+
+  blockquote footer {
+      color: var(--color-text-secondary);
+      display: block;
+      font-size: small;
+      line-height: var(--line-height);
+      padding: 1.5rem 0;
+  }
+
+  a.site-title {
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 23px;
+      text-align: left;
+      /* text-decoration: rgb(51, 51, 51);
+      text-decoration-color: rgb(51, 51, 51); */
+      color: rgb(0, 0, 0);
+      text-decoration-style: solid;
+      text-shadow: rgb(255, 255, 255) 1px 0px 0px, rgb(255, 255, 255) -1px 0px 0px";
+  }
+
+  .site-nav {
+      font-family: sans-serif;
+      font-size: 16px;
+      font-weight: 300;
+      text-align: left;
+      text-decoration: rgb(51, 51, 51);
+      text-decoration-color: rgb(51, 51, 51);
+      color: rgb(51, 51, 51);
+      text-decoration-style: solid;
+  }
+
+  a.nav {
+      color: #000000;
+  }
+
+  .article-meta {
+      font-size: 14px;
+  }
+
+  p.byline p.author {
+      font-size: 20px;
+      /* font-style: italic; */
+      padding-bottom: 2rem;
+      font-variant: common-ligatures small-caps;
+  }
+
+  #title-block-header {
+      text-align: left;
+  }
+
+  .fourohfour {
+     font-size: 30px;
+     text-align: center;
+  }
+
+  /* Text-based tab navigation */
+  .tab-nav {
+      text-align: center;
+      margin: 0 auto;
+      max-width: var(--width-content);
+      padding: 0 1rem;
+  }
+
+  .tab-nav a {
+      cursor: pointer;
+      margin: 0 0.3rem;
+      color: var(--color);
+  }
+
+  /* Panels */
+  .panel { 
+      display: none; 
+  }
+  .panel.active { 
+      display: block; 
+  }
+
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  /* ── Trip-specific styles ─────────────────────────────────────────────── */
+
+  .day-block {
+    margin: 2rem 0;
+    padding-left: 1rem;
+    /* border-left: 3px solid var(--color); */
+  }
+
+  .day-title {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: var(--color-text);
+    margin-bottom: 0.15rem;
+  }
+
+  .day-meta {
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.01em;
+  }
+
+  .track {
+    margin: 0.6rem 0;
+    padding: 0.7rem 0.9rem;
+    background: var(--color-accent);
+  }
+
+  .track .label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color);
+    margin-bottom: 0.35rem;
+  }
+
+  .track-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0;
+    text-align: justify;
+  }
+
+  .stay-item {
+    margin: 1.5rem 0;
+  }
+
+  .stay-name {
+    font-weight: 900;
+    font-size: 1.1rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .stay-detail {
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    margin: 0.2rem 0 0.5rem 0;
+  }
+
+  .stay-desc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    text-align: justify;
+  }
+
+  .book-table {
+    width: 100%;
+    white-space: normal;
+    border-radius: 0;
+  }
+
+  .book-table thead {
+    border-radius: 0;
+  }
+
+  .book-table thead th:first-child {
+    border-top-left-radius: 0;
+  }
+
+  .book-table thead th:last-child {
+    border-top-right-radius: 0;
+  }
+
+  .book-table td,
+  .book-table th {
+    vertical-align: top;
+  }
+
+  .note-cell {
+    white-space: normal;
+    min-width: 180px;
+    max-width: 320px;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .urgent {
+    color: #c0392b;
+  }
+
+  .muted {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+
+  </style>
+</head>
+
+<body>
+
+<main>
+<div class="tab-nav">
+  <h3>
+    <mark>
+      <a id="tab-overview" href="#" onclick="show('overview');return false;">Overview</a>
+    </mark> 
+    | <a id="tab-itinerary" href="#" onclick="show('itinerary');return false;">Itinerary</a> 
+    | <a id="tab-stay" href="#" onclick="show('stay');return false;">Accommodation</a> 
+    | <a id="tab-book" href="#" onclick="show('book');return false;">👀</a></h3>
+</div>
+
+<!-- ── OVERVIEW ─────────────────────────────────────────────────────────── -->
+<div id="overview" class="panel active">
+  <p align="justify">A 4-day multi-generational trip bringing everyone into 🌺 NATURE 🌳, away from 📅 URBAN 🏪 LIFE 🏗️, at their own pace. The trip runs on <strong>parallel tracks</strong> — not everyone does the same thing, and that's by design. Hikers hike, the cavern group caverns, the river floaters float. Everyone reunites for dinner and evenings at the cabin.</p>
+  <p align="justify"><strong>Dates</strong>: June 27–30, 2026</p>
+  <p align="justify"><strong>Group</strong>: 27 people (2 👶🏻, 5 👴🏻👵🏻, 6 🧒🏻, 5 💑🏻, 4 👨🏻👩🏻)</p>
+  <p align="justify"><strong>Gather</strong>: Pittsburgh </p>
+  <p align="justify"><strong>Transport</strong>: Convoy of Cars 🚗🚗🚗🚗🚗</p>
+  <p align="justify"><strong>Base</strong>: Hensley Hollow Lodge, Elkton, VA <a href="https://www.tripforth.com/rentals/hensley-hollow-lodge-of-elkton">📍🔗</a>(<--Click Me) </p>
+  <p align="justify"><strong>Parks</strong>: New River Gorge National Park <a href="https://www.nps.gov/neri/planyourvisit/crvc.htm">🏞️🔗</a>, Monongahela National Forest -- Seneca Rocks <a href="https://www.fs.usda.gov/r09/monongahela/recreation/spruce-knob-seneca-rocks-national-recreation-area">🏞️🔗</a>, Shenandoah National Park <a href="https://www.nps.gov/shen/index.htm">🏞️🔗</a></p>
+</div>
+
+<!-- ── ITINERARY ─────────────────────────────────────────────────────────── -->
+<div id="itinerary" class="panel">
+  <div class="day-block">
+    <div class="day-title">Day 0 &mdash; Gather in Pittsburgh</div>
+    <div class="day-meta">Friday, June 26</div>
+    <div class="track">
+      <div class="track-text">Everyone arrives Pittsburgh/McDonald by evening. Tonight is about loading up and getting excited — no agenda.</div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-title">Day 1 &mdash; The West Virginia Adventure Drive</div>
+    <div class="day-meta">Saturday, June 27 &nbsp;&middot;&nbsp; Pittsburgh/McDonald ➡️ Canyon Rim Visitor Center ➡️ Spruce Knob-Seneca Rocks National Recreation Area ➡️ Hensley Hollow Lodge 🏡 in Elkton, VA </div>
+
+    <div class="track">
+      <span class="label">Google Map Links</span>
+      <div class="track-text"><strong>Canyon Rim Visitor Center</strong> -- <a href="https://maps.app.goo.gl/8y7Mti4JtwGYRBk26">📍🔗</a><br><strong>Spruce Knob-Seneca Rocks National Recreation Area</strong> -- <a href="https://maps.app.goo.gl/RQjuMSSpA3pV3RxEA">📍🔗</a><br><strong>Hensley Hollow Lodge</strong> -- <a href="https://maps.app.goo.gl/QwcPL1w2NLmj7NMK6">📍🔗</a></div>
+    </div>
+
+    <div class="track">
+      <span class="label">📝</span>
+      <div class="track-text">The baby-family 👶🏻👶🏻💑🏻 can choose to take Pittsburgh ➡️ I-79 ➡️ I-68 ➡️ I-81 ➡️ Hensley Hollow Lodge (~5 hrs) route. Arrive early afternoon. Check into cabin, stock up, enjoy the porch. Be the welcoming committee.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">stop 1 &middot; Canyon Rim Visitor Center at New River Gorge National Park, WV</span>
+      <div class="track-text">~3 hrs from Pittsburgh/McDonald, 2–2.5 hr stop. America's newest national park (2020). The iconic gorge bridge spans 876 ft above the river — visible from paved Canyon Rim Visitor Center walkways. NPS passport stamps here. Lunch in Fayetteville, WV nearby.
+      <br><strong>Everyone</strong> -- paved boardwalk overlooks at Canyon Rim Visitor Center
+      <br><strong>Moderate hikers 🥾</strong> -- Long Point Trail (3.1 mi out & back, 344 ft gain, ~1–1.5 hrs) <a href="https://www.alltrails.com/trail/us/west-virginia/long-point?u=i&sh=dsgnco">👣🔗</a>
+      <br><strong>Avid hikers </strong>🧗🏻‍ -- Endless Wall Trail (5.5 mi out & back, 538 ft gain, ~2–2.5 hrs) <a href="https://www.alltrails.com/trail/us/west-virginia/endless-wall?u=i&sh=dsgnco">👣🔗</a>
+      </div>
+    </div>
+
+    <div class="track">
+      <span class="label">stop 2 &middot; Spruce Knob-Seneca Rocks National Recreation Area, WV</span>
+      <div class="track-text">~1.5 hrs from New River Gorge National Park, 1.5–2 hr stop. A 900-ft quartzite fin rising from the valley floor — jaw-dropping from the road.
+      <br><strong>Everyone </strong> -- Discovery Center, picnic area, river footbridge
+      <br><strong>Avid hikers 🧗🏻‍</strong> -- Seneca Rocks Trail (3.6 mi out & back, 849 ft gain, ~1 hr up) <a href="https://www.alltrails.com/trail/us/west-virginia/seneca-rocks?sh=dsgnco">👣🔗</a>
+      </div>
+    </div>
+
+    <div class="track">
+      <span class="label">evening &middot; all</span>
+      <div class="track-text">Arrive at the base (~2.5 hrs from Seneca Rocks). Reunite with the baby-family 👶🏻👶🏻💑🏻. Grill out, light the firepit, no schedule. Just arrive and exhale.</div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-title">Day 2 &mdash; Shenandoah + Luray Caverns</div>
+    <div class="day-meta">Sunday, June 28 &nbsp;&middot;&nbsp; Three parallel tracks all day</div>
+
+    <div class="track">
+      <span class="label">Tickets Purchase Links</span>
+      <div class="track-text"><strong>Old Rag Mountain day-use tickets</strong> -- <a href="https://www.recreation.gov/ticket/facility/10088450">🎟️🔗</a> ($2 per person -- 📝 for group A)
+      <br><strong>National Park Entrance Pass</strong> -- <a href="https://www.nps.gov/shen/planyourvisit/fees.htm#spci_E19ED1C5-FFAB-76A1-503F3C2790721AF1">🎟️🔗</a>(standard pass $15-$30 per vehicle -- 📝 for group A and group B)
+      <br><strong>Luray Caverns Tickets</strong> -- <a href="https://luraycaverns.com/">🎟️🔗</a>(standard tour tickets are $35.47 per adult, $33.50 per senior, $17.73 per kid -- 📝 for group C)</div>
+    </div>
+
+    <div class="track">
+      <span class="label">group A &middot; avid hikers 🧗🏻‍</span>
+      <div class="track-text"><strong>Old Rag Mountain Loop</strong><a href="https://www.alltrails.com/trail/us/virginia/old-rag-mountain-loop-trail?sh=dsgnco">👣🔗</a> -- 9.3 mi loop, 2,608 ft elevation gain, ~7–8 hrs estimated time. One of the most celebrated hikes on the East Coast. Full-day rock scramble with 360° summit views. Enter by 8 AM. Requires a timed-entry permit and standard park entrance pass.</div>
+    </div>
+    
+    <div class="track">
+      <span class="label">group B &middot; moderate hikers + older kids 🥾</span>
+      <div class="track-text"><strong>Lower White Oak Falls via White Oak Canyon Trail</strong><a href="https://www.alltrails.com/trail/us/virginia/lower-white-oak-falls-via-whiteoak-canyon-trail?sh=dsgnco">👣🔗</a> -- 2.9 mi out & back, 406 ft elevation gain, ~1.5 hrs estimated time. Cascading waterfalls along a shaded creek. Take it slow. Great for kids. 
+      <br><strong>Afternoon</strong>: scenic Skyline Drive cruise with multiple overlook stops.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">group C &middot; seniors, babies, young kids</span>
+      <div class="track-text"><strong>Luray Caverns</strong> -- largest cavern on the East Coast. Fully paved and accessible for strollers and mobility aids. Naturally 58°F inside — a summer blessing. The stalactite organ that plays music is unforgettable for kids. ~1.5 hrs. After they are done exploring the caverns, they can explore downtown Luray, ice cream, shops.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">evening &middot; all</span>
+      <div class="track-text">Group cookout at the cabin. Everyone swapping stories. This is the heart 💖 of the trip.</div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-title">Day 3 &mdash; River Adventures + Skyline Drive Sunset</div>
+    <div class="day-meta">Monday, June 29</div>
+
+    <div class="track">
+      <span class="label">Tickets Purchase Links</span>
+      <div class="track-text"><strong>Shenandoah River Adventures</strong>: <a href="https://shenandoah-river.com/">🎟️🔗</a> (📝 for everyone)
+      </div>
+    </div>
+
+    <div class="track">
+      <span class="label">group A &middot; avid hikers 🧗🏻‍</span>
+      <div class="track-text"><strong>Hawksbill Summit Trail</strong><a href="https://www.alltrails.com/trail/us/virginia/hawksbill-summit?sh=dsgnco">👣🔗</a> -- a shorter, yet steeper, route to shenandoah's highest peak -- 1.6 mi out & back, 666 ft elevation gain, 1-1.5 hrs estimated time. Then join everyone for river adventures.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">group B &middot; moderate hikers + older kids 🥾</span>
+      <div class="track-text"><strong>Bearfence Mountain Loop</strong><a href="https://www.alltrails.com/trail/us/virginia/bearfence-mountain-trail?sh=dsgnco">👣🔗</a> -- 1.2 mi loop, 242 ft elevation gain fun rock scramble to a 360° summit <strong>AND/OR</strong> 
+      <br><strong>Dark Hollow Falls</strong><a href="https://www.alltrails.com/trail/us/virginia/dark-hollow-falls-trail?sh=dsgnco">👣🔗</a> -- 1.7 mi out & back, 585 ft elevation gain, 1-1.5 hrs estimated time, easy waterfall hike. Then join everyone for river adventures.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">group C &middot; seniors, babies, young kids</span>
+      <div class="track-text"><strong>Hensley Hollow Lodge + Massanutten Resort</strong> -- Our booking with Hensley Hollow Lodge comes with FREE access to Massanutten Resort Recreation Center. Baby family, mobility-limited seniors, and young kids can relax at the cabin OR enjoy the resort recreational center amenities.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">most of the group &middot; river tubing</span>
+      <div class="track-text"><strong>Shenandoah River Tubing</strong> -- ~2–3 hrs guided float on the calm South Fork Shenandoah via Shenandoah River Outfitters (<a href="https://urldefense.com/v3/__https://shenandoahriver.com__;!!NZvER7FxgEiBAiR_!qQUY7MpBwvxYP27OOGZXy3z3jhHtv4Iszl80UH4X49--i-0ugM8xlp5MInBpmcqqgaJr3WVHqjFzJFQPqQJBw73tunY_7_E0ow$">shenandoahriver.com</a>). Suitable for non-hikers, most seniors, and kids 6+. Book ahead for a large group.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">late afternoon &middot; all</span>
+      <div class="track-text"><strong>Skyline Drive Sunset Cruise</strong> -- everyone in cars for golden hour. Stony Man, Thorofare Mountain, and Crescent Rock overlooks. Among the most beautiful views in the eastern US -- zero hiking required, just park and walk to the railing.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">evening &middot; all</span>
+      <div class="track-text">Group cookout at the cabin OR Group dinner out in Luray (Book ahead for the party of 20+). Everyone swapping stories. This is the heart 💖 of the trip.</div>
+    </div>
+  </div>
+
+  <div class="day-block">
+    <div class="day-title">Day 4 &mdash; Easy Morning + Drive Home</div>
+    <div class="day-meta">Tuesday, June 30</div>
+
+    <div class="track">
+      <span class="label">optional</span>
+      <div class="track-text"><strong>Stony Man via Appalachian Trail</strong><a href="https://www.alltrails.com/trail/us/virginia/stony-man-via-appalachian-trail?sh=dsgnco">👣🔗</a>-- 1.5 mi loop, 321 ft elevation gain, 30–45 mins. Best view-to-effort ratio in Shenandoah. Works for hikers, active seniors, and older kids.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">all &middot; brunch + checkout</span>
+      <div class="track-text">Slow brunch together. The kind that takes two hours. Pack up, checkout.</div>
+    </div>
+
+    <div class="track">
+      <span class="label">drive home</span>
+      <div class="track-text">I-81 N → I-70 W → Pittsburgh (~5 hrs). Lunch stop in Hagerstown, MD or Breezewood, PA.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── WHERE WE STAY ──────────────────────────────────────────────────────── -->
+<div id="stay" class="panel">
+  <p align="justify">One large lodge for our group — 2 👶🏻, 5 👴🏻👵🏻, 6 🧒🏻, 5 💑🏻, 4 👨🏻👩🏻 — that also serves as the shared gathering space for all meals and evenings.</p>
+
+  <div class="stay-item">
+    <div class="stay-name">Hensley Hollow Lodge &mdash; Elkton, VA</div>
+    <div class="stay-detail">7 bedrooms &middot; 4 bathrooms &middot; sleeps up to 22 &middot; 5 private acres &middot; ★ 4.9</div>
+    <div class="stay-desc">A 4,000+ sq ft log home with panoramic Blue Ridge Mountain views. Main-level king suites with private decks, plus a loft with queen and twin beds — ideal for kids. 8-person hot tub, fire pit, gas grill, Blackstone griddle, game room, full kitchen. Multiple guests report it handles large groups without anyone feeling crowded. About 20–25 min drive to Luray and all trailheads. Listed on <a href="https://urldefense.com/v3/__https://www.tripforth.com/rentals/hensley-hollow-lodge-of-elkton__;!!NZvER7FxgEiBAiR_!qQUY7MpBwvxYP27OOGZXy3z3jhHtv4Iszl80UH4X49--i-0ugM8xlp5MInBpmcqqgaJr3WVHqjFzJFQPqQJBw73tunag-FvHMw$" target="_blank">TripForth</a>, VRBO (#46072), and Airbnb.</div>
+  </div>
+</div>
+
+<!-- ── BOOK THESE NOW ──────────────────────────────────────────────────────── -->
+<div id="book" class="panel">
+  <!-- <p>In order of urgency. Summer in Shenandoah fills fast — especially Old Rag permits, which are the single most time-sensitive item on this list.</p>
+
+  <table class="book-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>What</th>
+        <th>Where</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>01</td>
+        <td><strong class="urgent">Lodge / cabin</strong></td>
+        <td>TripForth, VRBO, Airbnb</td>
+        <td class="note-cell urgent">Large group July homes go fast. Hensley Hollow Lodge (Elkton, VA) is the top pick.</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td><strong>Old Rag permits</strong></td>
+        <td><a href="https://urldefense.com/v3/__https://recreation.gov__;!!NZvER7FxgEiBAiR_!qQUY7MpBwvxYP27OOGZXy3z3jhHtv4Iszl80UH4X49--i-0ugM8xlp5MInBpmcqqgaJr3WVHqjFzJFQPqQJBw73tunZKu28Uhg$">recreation.gov</a></td>
+        <td class="note-cell">$10/person. Sells out weeks ahead for July. Target 7–8 AM entry.</td>
+      </tr>
+      <tr>
+        <td>03</td>
+        <td><strong>Luray Caverns tickets</strong></td>
+        <td><a href="https://urldefense.com/v3/__https://luraycaverns.com__;!!NZvER7FxgEiBAiR_!qQUY7MpBwvxYP27OOGZXy3z3jhHtv4Iszl80UH4X49--i-0ugM8xlp5MInBpmcqqgaJr3WVHqjFzJFQPqQJBw73tunapdFfMIg$">luraycaverns.com</a></td>
+        <td class="note-cell">Book online to secure a time slot for Group C on Day 2.</td>
+      </tr>
+      <tr>
+        <td>04</td>
+        <td><strong>River tubing/River Adventures</strong></td>
+        <td><a href="https://urldefense.com/v3/__https://shenandoahriver.com__;!!NZvER7FxgEiBAiR_!qQUY7MpBwvxYP27OOGZXy3z3jhHtv4Iszl80UH4X49--i-0ugM8xlp5MInBpmcqqgaJr3WVHqjFzJFQPqQJBw73tunY_7_E0ow$">shenandoahriver.com</a></td>
+        <td class="note-cell">Call to book large group float for Day 3. Ask about group rates.</td>
+      </tr>
+    </tbody>
+  </table> -->
+
+  <p class="muted"><strong>We will use our WhatsApp group for day-of coordination. Each morning, one trip lead sends a quick note with the day's plan, meeting times, and any logistics. That's all the structure needed — the evenings take care of themselves.</strong></p>
+  <p align="center">🌿 <strong>See you in Pittsburgh on June 26th</strong> 🌿</p>
+
+</div>
+
+</main>
+
+<script>
+  var tabs = {
+    overview:  'tab-overview',
+    itinerary: 'tab-itinerary',
+    stay:      'tab-stay',
+    book:      'tab-book'
+  };
+
+  function show(id) {
+    // hide all panels
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+
+    // unwrap all marks
+    document.querySelectorAll('.tab-nav mark').forEach(function(m) {
+      var a = m.querySelector('a');
+      m.replaceWith(a);
+    });
+
+    // show selected panel
+    document.getElementById(id).classList.add('active');
+
+    // wrap active link in mark
+    var activeLink = document.getElementById(tabs[id]);
+    var mark = document.createElement('mark');
+    activeLink.replaceWith(mark);
+    mark.appendChild(activeLink);
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // OPTIONAL: mark first tab on load
+  window.addEventListener('DOMContentLoaded', function() {
+    show('overview');
+  });
+</script>
+
+</body>
+</html>
