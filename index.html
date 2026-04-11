@@ -316,39 +316,127 @@
 </main>
 
 <script>
-  var tabs = {
-    overview:  'tab-overview',
-    itinerary: 'tab-itinerary',
-    stay:      'tab-stay',
-    book:      'tab-book'
-  };
+/* ── Tab navigation ── */
+var TABS = { overview:'tab-overview', itinerary:'tab-itinerary', stay:'tab-stay', book:'tab-book', meals:'tab-meals' };
 
-  function show(id) {
-    // hide all panels
-    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+function show(id) {
+  document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.tab-nav mark').forEach(function(m) { var a = m.querySelector('a'); m.replaceWith(a); });
+  document.getElementById(id).classList.add('active');
+  var activeLink = document.getElementById(TABS[id]);
+  var mark = document.createElement('mark');
+  activeLink.replaceWith(mark);
+  mark.appendChild(activeLink);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-    // unwrap all marks
-    document.querySelectorAll('.tab-nav mark').forEach(function(m) {
-      var a = m.querySelector('a');
-      m.replaceWith(a);
-    });
+window.addEventListener('DOMContentLoaded', function() { show('overview'); });
 
-    // show selected panel
-    document.getElementById(id).classList.add('active');
+/* ── Meal planner ── */
+var KEY = 'kv_meals2';
+var DAYS = [
+  { id:'d1', label:'Day 1', date:'Sat Jun 27', sub:'WV drive day — on the road' },
+  { id:'d2', label:'Day 2', date:'Sun Jun 28', sub:'Shenandoah — full activity day' },
+  { id:'d3', label:'Day 3', date:'Mon Jun 29', sub:'River tubing + sunset drive' },
+  { id:'d4', label:'Day 4', date:'Tue Jun 30', sub:'Easy morning + drive home' },
+];
+var SLOTS = [
+  { id:'bf', icon:'&#9728;',  label:'Breakfast' },
+  { id:'lu', icon:'&#9788;',  label:'Lunch' },
+  { id:'di', icon:'&#9790;',  label:'Dinner' },
+  { id:'sn', icon:'&#9752;',  label:'Snacks &amp; road food' },
+];
+var SLOTS_D4 = [
+  { id:'bf', icon:'&#9728;',  label:'Brunch' },
+  { id:'sn', icon:'&#9752;',  label:'Snacks &amp; road food' },
+];
+var CATS = ['Produce','Grains & Legumes','Dairy Alternatives','Pantry','Snacks & Drinks','Spices & Condiments','Other'];
+var mSt = null, curD = 'd1', pinBuf = '';
 
-    // wrap active link in mark
-    var activeLink = document.getElementById(tabs[id]);
-    var mark = document.createElement('mark');
-    activeLink.replaceWith(mark);
-    mark.appendChild(activeLink);
+function mBlank() {
+  var meals = {};
+  DAYS.forEach(function(d) { meals[d.id] = {}; SLOTS.forEach(function(s) { meals[d.id][s.id] = {dish:'',who:'',notes:'',ideas:[]}; }); });
+  return { pin:'2626', people:[], meals:meals, groc:[] };
+}
+function mLoad() {
+  try {
+    var r = localStorage.getItem(KEY);
+    if (r) { mSt = JSON.parse(r); DAYS.forEach(function(d) { if (!mSt.meals[d.id]) mSt.meals[d.id]={}; SLOTS.forEach(function(s) { if (!mSt.meals[d.id][s.id]) mSt.meals[d.id][s.id]={dish:'',who:'',notes:'',ideas:[]}; }); }); if (!mSt.groc) mSt.groc=[]; if (!mSt.people) mSt.people=[]; }
+    else mSt = mBlank();
+  } catch(e) { mSt = mBlank(); }
+}
+function mSave() { try { localStorage.setItem(KEY, JSON.stringify(mSt)); } catch(e) {} }
+function xe(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function updDots() { for (var i=0;i<4;i++) { var e=document.getElementById('pd'+i); if(e) e.classList.toggle('on', i<pinBuf.length); } }
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+function pk(d) {
+  if (pinBuf.length >= 8) return;
+  pinBuf += d; updDots(); document.getElementById('pin-err').textContent = '';
+  if (pinBuf.length >= 4) {
+    mLoad();
+    if (pinBuf === mSt.pin) {
+      pinBuf = ''; updDots();
+      document.getElementById('m-gate').style.display = 'none';
+      document.getElementById('m-app').classList.add('show');
+      mRender();
+    } else {
+      document.getElementById('pin-err').textContent = 'Incorrect PIN — try again';
+      pinBuf = '';
+      setTimeout(function() { updDots(); document.getElementById('pin-err').textContent=''; }, 700);
+    }
   }
+}
+function pd() { pinBuf = pinBuf.slice(0,-1); updDots(); document.getElementById('pin-err').textContent=''; }
+function doLock() { pinBuf=''; updDots(); document.getElementById('m-app').classList.remove('show'); document.getElementById('m-gate').style.display=''; }
+function mRender() { renderTabs(); renderPanels(); renderGroc(); }
 
-  // OPTIONAL: mark first tab on load
-  window.addEventListener('DOMContentLoaded', function() {
-    show('overview');
-  });
+function renderTabs() {
+  document.getElementById('dtabs').innerHTML = DAYS.map(function(d) {
+    return '<button class="dtab'+(d.id===curD?' act':'')+'" onclick="switchD(\''+d.id+'\')">'+d.label+'</button>';
+  }).join('');
+}
+function switchD(id) {
+  curD=id; renderTabs();
+  document.querySelectorAll('.dpanel').forEach(function(p){p.classList.remove('act');});
+  var el=document.getElementById('dp-'+id); if(el) el.classList.add('act');
+}
+function renderPanels() {
+  document.getElementById('dpanels').innerHTML = DAYS.map(function(d) {
+    var slots = d.id === 'd4' ? SLOTS_D4 : SLOTS;
+    return '<div class="dpanel day-block'+(d.id===curD?' act':'')+'" id="dp-'+d.id+'">'
+      +'<div class="day-meta">'+d.sub+'</div>'
+      +slots.map(function(s){return slotCard(d.id,s);}).join('')
+      +'</div>';
+  }).join('');
+}
+function slotCard(did, slot) {
+  var m=mSt.meals[did][slot.id];
+  var opts=['<option value="">— unassigned —</option>'].concat(mSt.people.map(function(p){return'<option value="'+xe(p)+'"'+(m.who===p?' selected':'')+'>'+xe(p)+'</option>';})).join('');
+  var sid=did+'-'+slot.id;
+  var chips=m.ideas.length?m.ideas.map(function(x,i){return'<span class="ichip">'+xe(x)+'<button class="ichip-use" onclick="useI(\''+did+'\',\''+slot.id+'\','+i+')">use</button><button class="ichip-del" onclick="delI(\''+did+'\',\''+slot.id+'\','+i+')">&times;</button></span>';}).join(''):'<span class="idea-empty">no ideas yet</span>';
+  return'<div class="track"><span class="label">'+slot.icon+' '+slot.label+(m.who?' &middot; <span class="slot-who">'+xe(m.who)+'</span>':'')+'</span><div class="track-text"><div class="mslots"><div class="mfl"><label>Dish / plan</label><input type="text" placeholder="e.g. masala chai &amp; poha" value="'+xe(m.dish)+'" oninput="setM(\''+did+'\',\''+slot.id+'\',\'dish\',this.value)"></div><div class="mfl"><label>Assigned to</label><select onchange="setM(\''+did+'\',\''+slot.id+'\',\'who\',this.value)">'+opts+'</select>'+(mSt.people.length===0?'<span class="no-ppl">Add planners in Settings first</span>':'')+'</div><div class="mfl"><label>Notes</label><textarea placeholder="ingredients, prep, dietary notes…" oninput="setM(\''+did+'\',\''+slot.id+'\',\'notes\',this.value)">'+xe(m.notes)+'</textarea></div><div class="ideas-wrap"><div class="ideas-lbl">Idea bank</div><div class="idea-chips" id="ic-'+sid+'">'+chips+'</div><div class="idea-add"><input type="text" id="ii-'+sid+'" placeholder="Suggest a dish…" onkeydown="if(event.key===\'Enter\')addI(\''+did+'\',\''+slot.id+'\')"><button onclick="addI(\''+did+'\',\''+slot.id+'\')">+ add</button></div></div></div></div></div>';
+}
+function setM(did,sid,f,v){mSt.meals[did][sid][f]=v;mSave();if(f==='who'){var el=document.getElementById('dp-'+did);var d=DAYS.find(function(x){return x.id===did;});if(el&&d){var slots=did==='d4'?SLOTS_D4:SLOTS;el.innerHTML='<div class="day-meta">'+d.sub+'</div><div class="mslots">'+slots.map(function(s){return slotCard(did,s);}).join('')+'</div>';}}}
+function addI(did,sid){var inp=document.getElementById('ii-'+did+'-'+sid);if(!inp)return;var v=inp.value.trim();if(!v)return;mSt.meals[did][sid].ideas.push(v);inp.value='';mSave();refreshChips(did,sid);}
+function delI(did,sid,i){mSt.meals[did][sid].ideas.splice(i,1);mSave();refreshChips(did,sid);}
+function useI(did,sid,i){mSt.meals[did][sid].dish=mSt.meals[did][sid].ideas[i];mSave();var el=document.getElementById('dp-'+did);var d=DAYS.find(function(x){return x.id===did;});if(el&&d){var slots=did==='d4'?SLOTS_D4:SLOTS;el.innerHTML='<div class="day-meta">'+d.sub+'</div><div class="mslots">'+slots.map(function(s){return slotCard(did,s);}).join('')+'</div>';}}
+function refreshChips(did,sid){var el=document.getElementById('ic-'+did+'-'+sid);if(!el)return;var ideas=mSt.meals[did][sid].ideas;el.innerHTML=ideas.length?ideas.map(function(x,i){return'<span class="ichip">'+xe(x)+'<button class="ichip-use" onclick="useI(\''+did+'\',\''+sid+'\','+i+')">use</button><button class="ichip-del" onclick="delI(\''+did+'\',\''+sid+'\','+i+')">&times;</button></span>';}).join(''):'<span class="idea-empty">no ideas yet</span>';}
+
+function renderGroc(){var c=document.getElementById('glist');if(!c)return;if(!mSt.groc.length){c.innerHTML='<p class="gempty">No items yet — add groceries above</p>';return;}var byc={};CATS.forEach(function(x){byc[x]=[];});mSt.groc.forEach(function(g){(byc[g.cat]||byc['Other']).push(g);});c.innerHTML=CATS.map(function(cat){var items=byc[cat];if(!items.length)return'';return'<div class="gcat-block"><div class="gcat-name">'+cat+'</div>'+items.map(function(g){return'<div class="gitem"><input type="checkbox"'+(g.chk?' checked':'')+' onchange="togG(\''+g.id+'\',this.checked)"><span class="gitem-name'+(g.chk?' done':'')+'">'+xe(g.name)+'</span><button class="gdel" onclick="rmG(\''+g.id+'\')">&times;</button></div>';}).join('')+'</div>';}).join('');}
+function addG(){var inp=document.getElementById('gi');var cat=document.getElementById('gcat');var v=inp.value.trim();if(!v)return;mSt.groc.push({id:'g'+Date.now(),name:v,cat:cat.value,chk:false});inp.value='';mSave();renderGroc();inp.focus();}
+function togG(id,c){var g=mSt.groc.find(function(x){return x.id===id;});if(g){g.chk=c;mSave();renderGroc();}}
+function rmG(id){mSt.groc=mSt.groc.filter(function(x){return x.id!==id;});mSave();renderGroc();}
+function clearChecked(){mSt.groc=mSt.groc.filter(function(x){return!x.chk;});mSave();renderGroc();}
+
+function renderPchips(){var c=document.getElementById('pchips');if(!c)return;c.innerHTML=mSt.people.length?mSt.people.map(function(p,i){return'<span class="chip">'+xe(p)+'<button class="chip-del" onclick="rmP('+i+')">&times;</button></span>';}).join(''):'<span style="font-size:11px;color:var(--m-t3);font-style:italic">none added yet</span>';}
+function addP(){var inp=document.getElementById('ni');var v=inp.value.trim();var msg=document.getElementById('pmsg');if(!v)return;if(mSt.people.includes(v)){msg.style.color='var(--m-tdanger)';msg.textContent='already in list';setTimeout(function(){msg.textContent='';},2000);return;}mSt.people.push(v);inp.value='';mSave();renderPchips();renderPanels();msg.style.color='var(--m-tok)';msg.textContent='added';setTimeout(function(){msg.textContent='';},1500);}
+function rmP(i){var r=mSt.people[i];mSt.people.splice(i,1);DAYS.forEach(function(d){SLOTS.forEach(function(s){if(mSt.meals[d.id][s.id].who===r)mSt.meals[d.id][s.id].who='';});});mSave();renderPchips();renderPanels();}
+function savePin(){var np=document.getElementById('np').value;var cp=document.getElementById('cp2').value;var msg=document.getElementById('pinmsg');if(!np){msg.style.color='var(--m-tdanger)';msg.textContent='enter a new pin';return;}if(np!==cp){msg.style.color='var(--m-tdanger)';msg.textContent='pins do not match';return;}if(np.length<4){msg.style.color='var(--m-tdanger)';msg.textContent='min 4 digits';return;}mSt.pin=np;mSave();document.getElementById('np').value='';document.getElementById('cp2').value='';msg.style.color='var(--m-tok)';msg.textContent='pin updated';setTimeout(function(){msg.textContent='';},2500);}
+function openS(){mLoad();renderPchips();document.getElementById('modal').classList.add('open');}
+function closeS(){document.getElementById('modal').classList.remove('open');}
+function openExport(){openS();genExp();}
+function genExp(){var lines=['Kuvadia trip — grocery list','All vegetarian, no eggs',''];var byc={};CATS.forEach(function(x){byc[x]=[];});mSt.groc.forEach(function(g){(byc[g.cat]||byc['Other']).push(g);});CATS.forEach(function(cat){var items=byc[cat];if(!items.length)return;lines.push(cat.toUpperCase());items.forEach(function(g){lines.push('  '+(g.chk?'[x]':'[ ]')+' '+g.name);});lines.push('');});lines.push('','MEAL PLAN');DAYS.forEach(function(d){lines.push('');lines.push(d.label+' — '+d.date);var slots=d.id==='d4'?SLOTS_D4:SLOTS;slots.forEach(function(s){var m=mSt.meals[d.id][s.id];if(m.dish||m.who)lines.push('  '+s.label.replace(/&amp;/g,'&')+': '+(m.dish||'—')+(m.who?' ['+m.who+']':''));if(m.notes)lines.push('     '+m.notes);});});var ta=document.getElementById('expa');if(ta)ta.value=lines.join('\n');}
+function copyExp(){genExp();var ta=document.getElementById('expa');if(ta){ta.select();try{document.execCommand('copy');}catch(e){}}}
 </script>
 
 </body>
