@@ -16,8 +16,8 @@
         </mark> 
         | <a id="tab-itinerary" href="#" onclick="show('itinerary');return false;">Itinerary</a> 
         | <a id="tab-stay" href="#" onclick="show('stay');return false;">Accommodation</a>
-        | <a id="tab-book" href="#" onclick="show('book');return false;">🍽️ Meals</a>
-        | <a id="tab-book" href="#" onclick="show('book');return false;">👀</a>
+        | <a id="tab-meals" href="#" onclick="show('meals');return false;">🍽️ Meals</a>
+        | <a id="tab-lookout" href="#" onclick="show('lookout');return false;">👀</a>
       </h3>
     </div>
 
@@ -204,7 +204,7 @@
   </div>
 
   <!-- ── LOOK OUT FOR ──────────────────────────────────────────────────────── -->
-  <div id="book" class="panel">
+  <div id="lookout" class="panel">
     <p class="muted"><strong>We will use our WhatsApp group for day-of coordination. Each morning, one trip lead sends a quick note with the day's plan, meeting times, and any logistics. That's all the structure needed — the evenings take care of themselves.</strong></p>
     <p align="center">🌿 <strong>See you in Pittsburgh on June 26th</strong> 🌿</p>
   </div>
@@ -317,7 +317,7 @@
 
 <script>
 /* ── Tab navigation ── */
-var TABS = { overview:'tab-overview', itinerary:'tab-itinerary', stay:'tab-stay', book:'tab-book', meals:'tab-meals' };
+var TABS = { overview:'tab-overview', itinerary:'tab-itinerary', stay:'tab-stay', book:'tab-meals', meals:'tab-lookout' };
 
 function show(id) {
   document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
