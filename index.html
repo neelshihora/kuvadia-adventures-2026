@@ -1,219 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="mvp.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kuvadia Adventure Convoy · June 2026 · Shenandoah</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-
-  <style>
-       
-  </style>
 </head>
 
 <body>
-
-<main>
-<div class="tab-nav">
-  <h3>
-    <mark>
-      <a id="tab-overview" href="#" onclick="show('overview');return false;">Overview</a>
-    </mark> 
-    | <a id="tab-itinerary" href="#" onclick="show('itinerary');return false;">Itinerary</a> 
-    | <a id="tab-stay" href="#" onclick="show('stay');return false;">Accommodation</a>
-    | <a id="tab-book" href="#" onclick="show('book');return false;">🍽️ Meals</a></h3>
-    | <a id="tab-book" href="#" onclick="show('book');return false;">👀</a></h3>
-</div>
-
-<!-- ── OVERVIEW ─────────────────────────────────────────────────────────── -->
-<div id="overview" class="panel active">
-  <p align="justify">A 4-day multi-generational trip bringing everyone into 🌺 NATURE 🌳, away from 📅 URBAN 🏪 LIFE 🏗️, at their own pace. The trip runs on <strong>parallel tracks</strong> — not everyone does the same thing, and that's by design. Hikers hike, the cavern group caverns, the river floaters float. Everyone reunites for dinner and evenings at the cabin.</p>
-  <p align="justify"><strong>Dates</strong>: June 27–30, 2026</p>
-  <p align="justify"><strong>Group</strong>: 27 people (2 👶🏻, 5 👴🏻👵🏻, 6 🧒🏻, 5 💑🏻, 4 👨🏻👩🏻)</p>
-  <p align="justify"><strong>Gather</strong>: Pittsburgh </p>
-  <p align="justify"><strong>Transport</strong>: Convoy of Cars 🚗🚗🚗🚗🚗</p>
-  <p align="justify"><strong>Base</strong>: Hensley Hollow Lodge, Elkton, VA <a href="https://www.tripforth.com/rentals/hensley-hollow-lodge-of-elkton">📍🔗</a>(<--Click Me) </p>
-  <p align="justify"><strong>Parks</strong>: New River Gorge National Park <a href="https://www.nps.gov/neri/planyourvisit/crvc.htm">🏞️🔗</a>, Monongahela National Forest -- Seneca Rocks <a href="https://www.fs.usda.gov/r09/monongahela/recreation/spruce-knob-seneca-rocks-national-recreation-area">🏞️🔗</a>, Shenandoah National Park <a href="https://www.nps.gov/shen/index.htm">🏞️🔗</a></p>
-</div>
-
-<!-- ── ITINERARY ─────────────────────────────────────────────────────────── -->
-<div id="itinerary" class="panel">
-  <div class="day-block">
-    <div class="day-title">Day 0 &mdash; Gather in Pittsburgh</div>
-    <div class="day-meta">Friday, June 26</div>
-    <div class="track">
-      <div class="track-text">Everyone arrives Pittsburgh/McDonald by evening. Tonight is about loading up and getting excited — no agenda.</div>
-    </div>
-  </div>
-
-  <div class="day-block">
-    <div class="day-title">Day 1 &mdash; The West Virginia Adventure Drive</div>
-    <div class="day-meta">Saturday, June 27 &nbsp;&middot;&nbsp; Pittsburgh/McDonald ➡️ Canyon Rim Visitor Center ➡️ Spruce Knob-Seneca Rocks National Recreation Area ➡️ Hensley Hollow Lodge 🏡 in Elkton, VA </div>
-
-    <div class="track">
-      <span class="label">Google Map Links</span>
-      <div class="track-text"><strong>Canyon Rim Visitor Center</strong> -- <a href="https://maps.app.goo.gl/8y7Mti4JtwGYRBk26">📍🔗</a>
-      <br><strong>Spruce Knob-Seneca Rocks National Recreation Area</strong> -- <a href="https://maps.app.goo.gl/RQjuMSSpA3pV3RxEA">📍🔗</a>
-      <br><strong>Hensley Hollow Lodge</strong> -- <a href="https://maps.app.goo.gl/QwcPL1w2NLmj7NMK6">📍🔗</a></div>
+  <main>
+    <div class="tab-nav">
+      <h3>
+        <mark>
+          <a id="tab-overview" href="#" onclick="show('overview');return false;">Overview</a>
+        </mark> 
+        | <a id="tab-itinerary" href="#" onclick="show('itinerary');return false;">Itinerary</a> 
+        | <a id="tab-stay" href="#" onclick="show('stay');return false;">Accommodation</a>
+        | <a id="tab-book" href="#" onclick="show('book');return false;">🍽️ Meals</a></h3>
+        | <a id="tab-book" href="#" onclick="show('book');return false;">👀</a>
+      </h3>
     </div>
 
-    <div class="track">
-      <span class="label">📝</span>
-      <div class="track-text">The baby-family 👶🏻👶🏻💑🏻 and anyone who does not want to tag along for the stops in WV can choose to take Pittsburgh ➡️ I-79 ➡️ I-68 ➡️ I-81 ➡️ Hensley Hollow Lodge (~5 hrs) route. Arrive early afternoon. Check into cabin, stock up, enjoy the porch. Be the welcoming committee.</div>
+    <!-- ── OVERVIEW ─────────────────────────────────────────────────────────── -->
+    <div id="overview" class="panel active">
+      <p align="justify">A 4-day multi-generational trip bringing everyone into 🌺 NATURE 🌳, away from 📅 URBAN 🏪 LIFE 🏗️, at their own pace. The trip runs on <strong>parallel tracks</strong> — not everyone does the same thing, and that's by design. Hikers hike, the cavern group caverns, the river floaters float. Everyone reunites for dinner and evenings at the cabin.</p>
+      <p align="justify"><strong>Dates</strong>: June 27–30, 2026</p>
+      <p align="justify"><strong>Group</strong>: 27 people (2 👶🏻, 5 👴🏻👵🏻, 6 🧒🏻, 5 💑🏻, 4 👨🏻👩🏻)</p>
+      <p align="justify"><strong>Gather</strong>: Pittsburgh </p>
+      <p align="justify"><strong>Transport</strong>: Convoy of Cars 🚗🚗🚗🚗🚗</p>
+      <p align="justify"><strong>Base</strong>: Hensley Hollow Lodge, Elkton, VA <a href="https://www.tripforth.com/rentals/hensley-hollow-lodge-of-elkton">📍🔗</a>(<--Click Me) </p>
+      <p align="justify"><strong>Parks</strong>: New River Gorge National Park <a href="https://www.nps.gov/neri/planyourvisit/crvc.htm">🏞️🔗</a>, Monongahela National Forest -- Seneca Rocks <a href="https://www.fs.usda.gov/r09/monongahela/recreation/spruce-knob-seneca-rocks-national-recreation-area">🏞️🔗</a>, Shenandoah National Park <a href="https://www.nps.gov/shen/index.htm">🏞️🔗</a></p>
     </div>
 
-    <div class="track">
-      <span class="label">stop 1 &middot; Canyon Rim Visitor Center at New River Gorge National Park, WV</span>
-      <div class="track-text">~3 hrs from Pittsburgh/McDonald, 2–2.5 hr stop. America's newest national park (2020). The iconic gorge bridge spans 876 ft above the river — visible from paved Canyon Rim Visitor Center walkways. NPS passport stamps here. Lunch in Fayetteville, WV at <a href="https://thetakeoutwv.com/">The Take Out and the Stache</a><a href="https://maps.app.goo.gl/bh5Niu1Zz5ZFU2ki7">📍🔗</a> (7 mins drive from the Canyon Rim Visitor Center).
-      <br><strong>Everyone</strong> -- Paved boardwalk with overlooks at Canyon Rim Visitor Center
-      <br><strong>Moderate hikers 🥾</strong> -- Long Point Trail (3.1 mi out & back, 344 ft gain, ~1–1.5 hrs) <a href="https://www.alltrails.com/trail/us/west-virginia/long-point?u=i&sh=dsgnco">👣🔗</a>
-      <br><strong>|--> Google Maps Link</strong> -- Long Point Trail Parking Lot <a href="https://maps.app.goo.gl/9MvBDSrpaq2zLxeH7">📍🔗</a>
-      <br><strong>Avid hikers </strong>🧗🏻‍ -- Endless Wall Trail (5.5 mi out & back, 538 ft gain, ~2–2.5 hrs) <a href="https://www.alltrails.com/trail/us/west-virginia/endless-wall?u=i&sh=dsgnco">👣🔗</a>
-      <br><strong>|--> Google Maps Link</strong> -- Endless Wall Trail Main Parking <a href="https://maps.app.goo.gl/FvubcG6msEvkERzN7">📍🔗</a>
+    <!-- ── ITINERARY ─────────────────────────────────────────────────────────── -->
+    <div id="itinerary" class="panel">
+      <div class="day-block">
+      <div class="day-title">Day 0 &mdash; Gather in Pittsburgh</div>
+      <div class="day-meta">Friday, June 26</div>
+      <div class="track">
+        <div class="track-text">Everyone arrives Pittsburgh/McDonald by evening. Tonight is about loading up and getting excited — no agenda.</div>
       </div>
     </div>
 
-    <div class="track">
-      <span class="label">stop 2 &middot; Spruce Knob-Seneca Rocks National Recreation Area, WV</span>
-      <div class="track-text">~1.5 hrs from New River Gorge National Park, 1.5–2 hr stop. A 900-ft quartzite fin rising from the valley floor — jaw-dropping from the road.
-      <br><strong>Everyone </strong> -- Discovery Center <a href="https://www.fs.usda.gov/r09/monongahela/recreation/seneca-rocks-discovery-center">🏫🔗</a>, 
-        Sites Homestead <a href="https://www.fs.usda.gov/r09/monongahela/recreation/sites-homestead">🏚️🔗</a>, 
-        <strong><a href="https://senecacaverns.com/things.php">Cavern tour</a></strong> followed by <strong><a href="https://senecacaverns.com/things.php?view=gemstonemining">Gemstone mining</a></strong> activity at Seneca Caverns (<a href="https://maps.app.goo.gl/ZTXTbqSbfRAXGCBV7">📍🔗</a> -- about 15 mins drive from Seneca Rocks Discovery Center),
-        OR some adults with kids can go to Greenbank Observatory Science Center <a href="https://greenbankobservatory.org/visit/science-center/">📡🔗</a> which is located <a href="https://maps.app.goo.gl/DULaGRsx4RtHK1bm9">📍🔗</a> about 50 mins drive from the Seneca Rocks Discovery Center
-      <br><strong>Avid hikers 🧗🏻‍</strong> -- Seneca Rocks Trail (3.6 mi out & back, 849 ft gain, ~1 hr up) <a href="https://www.alltrails.com/trail/us/west-virginia/seneca-rocks?sh=dsgnco">👣🔗</a>
-      <br><strong>|--> Google Maps Link</strong> -- Discovery Center Parking <a href="https://maps.app.goo.gl/prUVkufNFBn1J1tT9">📍🔗</a>
+    <div class="day-block">
+      <div class="day-title">Day 1 &mdash; The West Virginia Adventure Drive</div>
+      <div class="day-meta">Saturday, June 27 &nbsp;&middot;&nbsp; Pittsburgh/McDonald ➡️ Canyon Rim Visitor Center ➡️ Spruce Knob-Seneca Rocks National Recreation Area ➡️ Hensley Hollow Lodge 🏡 in Elkton, VA </div>
+      <div class="track">
+        <span class="label">Google Map Links</span>
+        <div class="track-text"><strong>Canyon Rim Visitor Center</strong> -- <a href="https://maps.app.goo.gl/8y7Mti4JtwGYRBk26">📍🔗</a>
+          <br><strong>Spruce Knob-Seneca Rocks National Recreation Area</strong> -- <a href="https://maps.app.goo.gl/RQjuMSSpA3pV3RxEA">📍🔗</a>
+          <br><strong>Hensley Hollow Lodge</strong> -- <a href="https://maps.app.goo.gl/QwcPL1w2NLmj7NMK6">📍🔗</a>
+        </div>
+      </div>
+
+      <div class="track">
+        <span class="label">📝</span>
+        <div class="track-text">The baby-family 👶🏻👶🏻💑🏻 and anyone who does not want to tag along for the stops in WV can choose to take Pittsburgh ➡️ I-79 ➡️ I-68 ➡️ I-81 ➡️ Hensley Hollow Lodge (~5 hrs) route. Arrive early afternoon. Check into cabin, stock up, enjoy the porch. Be the welcoming committee.</div>
+      </div>
+
+      <div class="track">
+        <span class="label">stop 1 &middot; Canyon Rim Visitor Center at New River Gorge National Park, WV</span>
+        <div class="track-text">~3 hrs from Pittsburgh/McDonald, 2–2.5 hr stop. America's newest national park (2020). The iconic gorge bridge spans 876 ft above the river — visible from paved Canyon Rim Visitor Center walkways. NPS passport stamps here. Lunch in Fayetteville, WV at <a href="https://thetakeoutwv.com/">The Take Out and the Stache</a><a href="https://maps.app.goo.gl/bh5Niu1Zz5ZFU2ki7">📍🔗</a> (7 mins drive from the Canyon Rim Visitor Center).
+          <br><strong>Everyone</strong> -- Paved boardwalk with overlooks at Canyon Rim Visitor Center
+          <br><strong>Moderate hikers 🥾</strong> -- Long Point Trail (3.1 mi out & back, 344 ft gain, ~1–1.5 hrs) <a href="https://www.alltrails.com/trail/us/west-virginia/long-point?u=i&sh=dsgnco">👣🔗</a>
+          <br><strong>|--> Google Maps Link</strong> -- Long Point Trail Parking Lot <a href="https://maps.app.goo.gl/9MvBDSrpaq2zLxeH7">📍🔗</a>
+          <br><strong>Avid hikers </strong>🧗🏻‍ -- Endless Wall Trail (5.5 mi out & back, 538 ft gain, ~2–2.5 hrs) <a href="https://www.alltrails.com/trail/us/west-virginia/endless-wall?u=i&sh=dsgnco">👣🔗</a>
+          <br><strong>|--> Google Maps Link</strong> -- Endless Wall Trail Main Parking <a href="https://maps.app.goo.gl/FvubcG6msEvkERzN7">📍🔗</a>
+        </div>
+      </div>
+
+      <div class="track">
+        <span class="label">stop 2 &middot; Spruce Knob-Seneca Rocks National Recreation Area, WV</span>
+        <div class="track-text">~1.5 hrs from New River Gorge National Park, 1.5–2 hr stop. A 900-ft quartzite fin rising from the valley floor — jaw-dropping from the road.
+          <br><strong>Everyone </strong> -- Discovery Center <a href="https://www.fs.usda.gov/r09/monongahela/recreation/seneca-rocks-discovery-center">🏫🔗</a>, 
+            Sites Homestead <a href="https://www.fs.usda.gov/r09/monongahela/recreation/sites-homestead">🏚️🔗</a>, 
+          <strong><a href="https://senecacaverns.com/things.php">Cavern tour</a></strong> followed by <strong><a href="https://senecacaverns.com/things.php?view=gemstonemining">Gemstone mining</a></strong> activity at Seneca Caverns (<a href="https://maps.app.goo.gl/ZTXTbqSbfRAXGCBV7">📍🔗</a> -- about 15 mins drive from Seneca Rocks Discovery Center),
+            OR some adults with kids can go to Greenbank Observatory Science Center <a href="https://greenbankobservatory.org/visit/science-center/">📡🔗</a> which is located <a href="https://maps.app.goo.gl/DULaGRsx4RtHK1bm9">📍🔗</a> about 50 mins drive from the Seneca Rocks Discovery Center
+          <br><strong>Avid hikers 🧗🏻‍</strong> -- Seneca Rocks Trail (3.6 mi out & back, 849 ft gain, ~1 hr up) <a href="https://www.alltrails.com/trail/us/west-virginia/seneca-rocks?sh=dsgnco">👣🔗</a>
+          <br><strong>|--> Google Maps Link</strong> -- Discovery Center Parking <a href="https://maps.app.goo.gl/prUVkufNFBn1J1tT9">📍🔗</a>
+        </div>
+      </div>
+
+      <div class="track">
+        <span class="label">evening &middot; all</span>
+        <div class="track-text">Arrive at the base (~2.5 hrs from Seneca Rocks). Reunite with the baby-family 👶🏻👶🏻💑🏻. Grill out, light the firepit, no schedule. Just arrive and exhale.</div>
       </div>
     </div>
 
-    <div class="track">
-      <span class="label">evening &middot; all</span>
-      <div class="track-text">Arrive at the base (~2.5 hrs from Seneca Rocks). Reunite with the baby-family 👶🏻👶🏻💑🏻. Grill out, light the firepit, no schedule. Just arrive and exhale.</div>
-    </div>
-  </div>
+    <div class="day-block">
+      <div class="day-title">Day 2 &mdash; Shenandoah + Luray Caverns</div>
+      <div class="day-meta">Sunday, June 28 &nbsp;&middot;&nbsp; Three parallel tracks all day</div>
 
-  <div class="day-block">
-    <div class="day-title">Day 2 &mdash; Shenandoah + Luray Caverns</div>
-    <div class="day-meta">Sunday, June 28 &nbsp;&middot;&nbsp; Three parallel tracks all day</div>
+      <div class="track">
+        <span class="label">Tickets Purchase Links</span>
+        <div class="track-text"><strong>Old Rag Mountain day-use tickets</strong> -- <a href="https://www.recreation.gov/ticket/facility/10088450">🎟️🔗</a> ($2 per person -- 📝 for group A)
+          <br><strong>National Park Entrance Pass</strong> -- <a href="https://www.nps.gov/shen/planyourvisit/fees.htm#spci_E19ED1C5-FFAB-76A1-503F3C2790721AF1">🎟️🔗</a>(standard pass $15-$30 per vehicle -- 📝 for group A and group B)
+          <br><strong>Luray Caverns Tickets</strong> -- <a href="https://luraycaverns.com/">🎟️🔗</a>(standard tour tickets are $35.47 per adult, $33.50 per senior, $17.73 per kid -- 📝 for group C)</div>
+      </div>
 
-    <div class="track">
-      <span class="label">Tickets Purchase Links</span>
-      <div class="track-text"><strong>Old Rag Mountain day-use tickets</strong> -- <a href="https://www.recreation.gov/ticket/facility/10088450">🎟️🔗</a> ($2 per person -- 📝 for group A)
-      <br><strong>National Park Entrance Pass</strong> -- <a href="https://www.nps.gov/shen/planyourvisit/fees.htm#spci_E19ED1C5-FFAB-76A1-503F3C2790721AF1">🎟️🔗</a>(standard pass $15-$30 per vehicle -- 📝 for group A and group B)
-      <br><strong>Luray Caverns Tickets</strong> -- <a href="https://luraycaverns.com/">🎟️🔗</a>(standard tour tickets are $35.47 per adult, $33.50 per senior, $17.73 per kid -- 📝 for group C)</div>
-    </div>
-
-    <div class="track">
-      <span class="label">group A &middot; avid hikers 🧗🏻‍</span>
-      <div class="track-text"><strong>Old Rag Mountain Loop</strong><a href="https://www.alltrails.com/trail/us/virginia/old-rag-mountain-loop-trail?sh=dsgnco">👣🔗</a> -- 9.3 mi loop, 2,608 ft elevation gain, ~7–8 hrs estimated time. One of the most celebrated hikes on the East Coast. Full-day rock scramble with 360° summit views. Enter by 8 AM. Requires a timed-entry permit and standard park entrance pass.
-      <br><strong>Google Maps Link</strong> -- Old Rag Parking (Ranger Station)<a href="https://maps.app.goo.gl/g5nZ54BSJsJuRRog7">📍🔗</a>
-      <br>📝 -- This is a physically demanding strenuous hike. You will be using both the upper body and lower body strength to traverse the rock scramble portion of the hike. Please bring appropriate hiking-wear. Make sure to carry some food, at least 2-litres of water, and sun protection. Pack as lightly as possible for this hike.</div>
-    </div>
+      <div class="track">
+        <span class="label">group A &middot; avid hikers 🧗🏻‍</span>
+        <div class="track-text"><strong>Old Rag Mountain Loop</strong><a href="https://www.alltrails.com/trail/us/virginia/old-rag-mountain-loop-trail?sh=dsgnco">👣🔗</a> -- 9.3 mi loop, 2,608 ft elevation gain, ~7–8 hrs estimated time. One of the most celebrated hikes on the East Coast. Full-day rock scramble with 360° summit views. Enter by 8 AM. Requires a timed-entry permit and standard park entrance pass.
+          <br><strong>Google Maps Link</strong> -- Old Rag Parking (Ranger Station)<a href="https://maps.app.goo.gl/g5nZ54BSJsJuRRog7">📍🔗</a>
+          <br>📝 -- This is a physically demanding strenuous hike. You will be using both the upper body and lower body strength to traverse the rock scramble portion of the hike. Please bring appropriate hiking-wear. Make sure to carry some food, at least 2-litres of water, and sun protection. Pack as lightly as possible for this hike.</div>
+      </div>
     
-    <div class="track">
-      <span class="label">group B &middot; moderate hikers + older kids 🥾</span>
-      <div class="track-text"><strong>Lower White Oak Falls via White Oak Canyon Trail</strong><a href="https://www.alltrails.com/trail/us/virginia/lower-white-oak-falls-via-whiteoak-canyon-trail?sh=dsgnco">👣🔗</a> -- 2.9 mi out & back, 406 ft elevation gain, ~1.5 hrs estimated time. Cascading waterfalls along a shaded creek. Take it slow. Great for kids. 
-      <br><strong>Google Maps Link</strong> -- Lower Whiteoak Canyon Parking Lot<a href="https://maps.app.goo.gl/CeRCEyPuWEcjuVvJA">📍🔗</a>
-      <br><strong>Afternoon</strong> -- scenic Skyline Drive cruise with multiple overlook stops.</div>
-    </div>
+      <div class="track">
+        <span class="label">group B &middot; moderate hikers + older kids 🥾</span>
+        <div class="track-text"><strong>Lower White Oak Falls via White Oak Canyon Trail</strong><a href="https://www.alltrails.com/trail/us/virginia/lower-white-oak-falls-via-whiteoak-canyon-trail?sh=dsgnco">👣🔗</a> -- 2.9 mi out & back, 406 ft elevation gain, ~1.5 hrs estimated time. Cascading waterfalls along a shaded creek. Take it slow. Great for kids. 
+          <br><strong>Google Maps Link</strong> -- Lower Whiteoak Canyon Parking Lot<a href="https://maps.app.goo.gl/CeRCEyPuWEcjuVvJA">📍🔗</a>
+          <br><strong>Afternoon</strong> -- scenic Skyline Drive cruise with multiple overlook stops.</div>
+      </div>
 
-    <div class="track">
-      <span class="label">group C &middot; seniors, babies, young kids</span>
-      <div class="track-text"><strong>Luray Caverns</strong> -- largest cavern on the East Coast. Fully paved and accessible for strollers and mobility aids. Naturally 58°F inside — a summer blessing. The stalactite organ that plays music is unforgettable for kids. ~1.5 hrs. After they are done exploring the caverns, they can explore downtown Luray, ice cream, shops.
-      <br><strong>Google Maps Link</strong> -- Luray Caverns Parking Lot<a href="https://maps.app.goo.gl/LcFGRqEKjBi4yRKq7">📍🔗</a>
-      <br>📝 -- Please look at the suggested plan listed under Day 2 section of <strong><a href="https://luraycaverns.com/map/">Plan Your Visit</a></strong> to come up with a better plan for Group C</div>
-    </div>
+      <div class="track">
+        <span class="label">group C &middot; seniors, babies, young kids</span>
+        <div class="track-text"><strong>Luray Caverns</strong> -- largest cavern on the East Coast. Fully paved and accessible for strollers and mobility aids. Naturally 58°F inside — a summer blessing. The stalactite organ that plays music is unforgettable for kids. ~1.5 hrs. After they are done exploring the caverns, they can explore downtown Luray, ice cream, shops.
+          <br><strong>Google Maps Link</strong> -- Luray Caverns Parking Lot<a href="https://maps.app.goo.gl/LcFGRqEKjBi4yRKq7">📍🔗</a>
+          <br>📝 -- Please look at the suggested plan listed under Day 2 section of <strong><a href="https://luraycaverns.com/map/">Plan Your Visit</a></strong> to come up with a better plan for Group C</div>
+      </div>
 
-    <div class="track">
-      <span class="label">evening &middot; all</span>
-      <div class="track-text">Group cookout at the cabin. Everyone swapping stories. This is the heart 💖 of the trip.</div>
-    </div>
-  </div>
-
-  <div class="day-block">
-    <div class="day-title">Day 3 &mdash; River Adventures + Skyline Drive Sunset</div>
-    <div class="day-meta">Monday, June 29</div>
-
-    <div class="track">
-      <span class="label">Tickets Purchase Links</span>
-      <div class="track-text"><strong>Shenandoah River Adventures</strong>: <a href="https://shenandoah-river.com/">🎟️🔗</a> (📝 for everyone)
+      <div class="track">
+        <span class="label">evening &middot; all</span>
+        <div class="track-text">Group cookout at the cabin. Everyone swapping stories. This is the heart 💖 of the trip.</div>
       </div>
     </div>
 
-    <div class="track">
-      <span class="label">group A &middot; avid hikers 🧗🏻‍</span>
-      <div class="track-text"><strong>Hawksbill Summit Trail</strong><a href="https://www.alltrails.com/trail/us/virginia/hawksbill-summit?sh=dsgnco">👣🔗</a> -- a shorter, yet steeper, route to shenandoah's highest peak -- 1.6 mi out & back, 666 ft elevation gain, 1-1.5 hrs estimated time. Then join everyone for river adventures.</div>
+    <div class="day-block">
+      <div class="day-title">Day 3 &mdash; River Adventures + Skyline Drive Sunset</div>
+      <div class="day-meta">Monday, June 29</div>
+
+      <div class="track">
+        <span class="label">Tickets Purchase Links</span>
+        <div class="track-text"><strong>Shenandoah River Adventures</strong>: <a href="https://shenandoah-river.com/">🎟️🔗</a> (📝 for everyone)
+        </div>
+      </div>
+
+      <div class="track">
+        <span class="label">group A &middot; avid hikers 🧗🏻‍</span>
+        <div class="track-text"><strong>Hawksbill Summit Trail</strong><a href="https://www.alltrails.com/trail/us/virginia/hawksbill-summit?sh=dsgnco">👣🔗</a> -- a shorter, yet steeper, route to shenandoah's highest peak -- 1.6 mi out & back, 666 ft elevation gain, 1-1.5 hrs estimated time. Then join everyone for river adventures.</div>
+      </div>
+
+      <div class="track">
+        <span class="label">group B &middot; moderate hikers + older kids 🥾</span>
+        <div class="track-text"><strong>Bearfence Mountain Loop</strong><a href="https://www.alltrails.com/trail/us/virginia/bearfence-mountain-trail?sh=dsgnco">👣🔗</a> -- 1.2 mi loop, 242 ft elevation gain fun rock scramble to a 360° summit. 
+          <br><strong>|--> Google Maps Link</strong> -- Bearfence Trailhead Parking <a href="https://maps.app.goo.gl/pL5ruBZBHSa8nxHZ8">📍🔗</a>
+          <br><strong>AND/OR</strong> 
+          <br><strong>Dark Hollow Falls</strong><a href="https://www.alltrails.com/trail/us/virginia/dark-hollow-falls-trail?sh=dsgnco">👣🔗</a> -- 1.7 mi out & back, 585 ft elevation gain, 1-1.5 hrs estimated time, easy waterfall hike. Then join everyone for river adventures.
+          <br><strong>|--> Google Maps Link</strong> -- Dark Hollow Falls Parking Area <a href="https://maps.app.goo.gl/MXMZVkgFxp8oqYu78">📍🔗</a></div>
+      </div>
+
+      <div class="track">
+        <span class="label">group C &middot; seniors, babies, young kids</span>
+        <div class="track-text"><strong>Hensley Hollow Lodge + Massanutten Resort</strong> -- Our booking with Hensley Hollow Lodge comes with FREE access to Massanutten Resort Recreation Center. Baby family, mobility-limited seniors, and young kids can relax at the cabin OR enjoy the resort recreational center amenities.</div>
+      </div>
+
+      <div class="track">
+        <span class="label">most of the group &middot; river tubing</span>
+        <div class="track-text"><strong>Shenandoah River Tubing</strong> -- ~2–3 hrs guided float on the calm South Fork Shenandoah via Shenandoah River Outfitters (<a href="https://urldefense.com/v3/__https://shenandoahriver.com__;!!NZvER7FxgEiBAiR_!qQUY7MpBwvxYP27OOGZXy3z3jhHtv4Iszl80UH4X49--i-0ugM8xlp5MInBpmcqqgaJr3WVHqjFzJFQPqQJBw73tunY_7_E0ow$">shenandoahriver.com</a>). Suitable for non-hikers, most seniors, and kids 6+. Book ahead for a large group.</div>
+      </div>
+
+      <div class="track">
+        <span class="label">late afternoon &middot; all</span>
+        <div class="track-text"><strong>Skyline Drive Sunset Cruise</strong> -- everyone in cars for golden hour. Stony Man, Thorofare Mountain, and Crescent Rock overlooks. Among the most beautiful views in the eastern US -- zero hiking required, just park and walk to the railing.</div>
+      </div>
+
+      <div class="track">
+        <span class="label">evening &middot; all</span>
+        <div class="track-text">Group cookout at the cabin OR Group dinner out in Luray (Book ahead for the party of 20+). Everyone swapping stories. This is the heart 💖 of the trip.</div>
+      </div>
     </div>
 
-    <div class="track">
-      <span class="label">group B &middot; moderate hikers + older kids 🥾</span>
-      <div class="track-text"><strong>Bearfence Mountain Loop</strong><a href="https://www.alltrails.com/trail/us/virginia/bearfence-mountain-trail?sh=dsgnco">👣🔗</a> -- 1.2 mi loop, 242 ft elevation gain fun rock scramble to a 360° summit. 
-      <br><strong>|--> Google Maps Link</strong> -- Bearfence Trailhead Parking <a href="https://maps.app.goo.gl/pL5ruBZBHSa8nxHZ8">📍🔗</a>
-      <br><strong>AND/OR</strong> 
-      <br><strong>Dark Hollow Falls</strong><a href="https://www.alltrails.com/trail/us/virginia/dark-hollow-falls-trail?sh=dsgnco">👣🔗</a> -- 1.7 mi out & back, 585 ft elevation gain, 1-1.5 hrs estimated time, easy waterfall hike. Then join everyone for river adventures.
-      <br><strong>|--> Google Maps Link</strong> -- Dark Hollow Falls Parking Area <a href="https://maps.app.goo.gl/MXMZVkgFxp8oqYu78">📍🔗</a></div>
-    </div>
+    <div class="day-block">
+      <div class="day-title">Day 4 &mdash; Easy Morning + Drive Home</div>
+      <div class="day-meta">Tuesday, June 30</div>
 
-    <div class="track">
-      <span class="label">group C &middot; seniors, babies, young kids</span>
-      <div class="track-text"><strong>Hensley Hollow Lodge + Massanutten Resort</strong> -- Our booking with Hensley Hollow Lodge comes with FREE access to Massanutten Resort Recreation Center. Baby family, mobility-limited seniors, and young kids can relax at the cabin OR enjoy the resort recreational center amenities.</div>
-    </div>
+      <div class="track">
+        <span class="label">optional</span>
+        <div class="track-text"><strong>Stony Man via Appalachian Trail</strong><a href="https://www.alltrails.com/trail/us/virginia/stony-man-via-appalachian-trail?sh=dsgnco">👣🔗</a>-- 1.5 mi loop, 321 ft elevation gain, 30–45 mins. Best view-to-effort ratio in Shenandoah. Works for hikers, active seniors, and older kids.
+          <br><strong>Google Maps Link</strong> -- Stony Man Trailhead Parking <a href="https://maps.app.goo.gl/FhdnQuW28Vzu5o248">📍🔗</a></div>
+      </div>
 
-    <div class="track">
-      <span class="label">most of the group &middot; river tubing</span>
-      <div class="track-text"><strong>Shenandoah River Tubing</strong> -- ~2–3 hrs guided float on the calm South Fork Shenandoah via Shenandoah River Outfitters (<a href="https://urldefense.com/v3/__https://shenandoahriver.com__;!!NZvER7FxgEiBAiR_!qQUY7MpBwvxYP27OOGZXy3z3jhHtv4Iszl80UH4X49--i-0ugM8xlp5MInBpmcqqgaJr3WVHqjFzJFQPqQJBw73tunY_7_E0ow$">shenandoahriver.com</a>). Suitable for non-hikers, most seniors, and kids 6+. Book ahead for a large group.</div>
-    </div>
+      <div class="track">
+        <span class="label">all &middot; brunch + checkout</span>
+        <div class="track-text">Slow brunch together. The kind that takes two hours. Pack up, checkout.</div>
+      </div>
 
-    <div class="track">
-      <span class="label">late afternoon &middot; all</span>
-      <div class="track-text"><strong>Skyline Drive Sunset Cruise</strong> -- everyone in cars for golden hour. Stony Man, Thorofare Mountain, and Crescent Rock overlooks. Among the most beautiful views in the eastern US -- zero hiking required, just park and walk to the railing.</div>
-    </div>
-
-    <div class="track">
-      <span class="label">evening &middot; all</span>
-      <div class="track-text">Group cookout at the cabin OR Group dinner out in Luray (Book ahead for the party of 20+). Everyone swapping stories. This is the heart 💖 of the trip.</div>
+      <div class="track">
+        <span class="label">drive home</span>
+        <div class="track-text">I-81 N ➡️ I-70 W ➡️ Pittsburgh/McDonald (~5 hrs). Lunch stop in Hagerstown, MD or Breezewood, PA.</div>
+      </div>
     </div>
   </div>
 
-  <div class="day-block">
-    <div class="day-title">Day 4 &mdash; Easy Morning + Drive Home</div>
-    <div class="day-meta">Tuesday, June 30</div>
+  <!-- ── ACCOMMODATION ──────────────────────────────────────────────────────── -->
+  <div id="stay" class="panel">
+    <p align="justify">One large lodge for our group — 2 👶🏻, 5 👴🏻👵🏻, 6 🧒🏻, 5 💑🏻, 4 👨🏻👩🏻 — that also serves as the shared gathering space for all meals and evenings.</p>
 
-    <div class="track">
-      <span class="label">optional</span>
-      <div class="track-text"><strong>Stony Man via Appalachian Trail</strong><a href="https://www.alltrails.com/trail/us/virginia/stony-man-via-appalachian-trail?sh=dsgnco">👣🔗</a>-- 1.5 mi loop, 321 ft elevation gain, 30–45 mins. Best view-to-effort ratio in Shenandoah. Works for hikers, active seniors, and older kids.
-      <br><strong>Google Maps Link</strong> -- Stony Man Trailhead Parking <a href="https://maps.app.goo.gl/FhdnQuW28Vzu5o248">📍🔗</a></div>
-    </div>
-
-    <div class="track">
-      <span class="label">all &middot; brunch + checkout</span>
-      <div class="track-text">Slow brunch together. The kind that takes two hours. Pack up, checkout.</div>
-    </div>
-
-    <div class="track">
-      <span class="label">drive home</span>
-      <div class="track-text">I-81 N ➡️ I-70 W ➡️ Pittsburgh/McDonald (~5 hrs). Lunch stop in Hagerstown, MD or Breezewood, PA.</div>
+    <div class="stay-item">
+      <div class="stay-name">Hensley Hollow Lodge &mdash; Elkton, VA</div>
+      <div class="stay-detail">7 bedrooms &middot; 4 bathrooms &middot; sleeps up to 22 &middot; 5 private acres &middot; ★ 4.9</div>
+      <div class="stay-desc">A 4,000+ sq ft log home with panoramic Blue Ridge Mountain views. Main-level king suites with private decks, plus a loft with queen and twin beds — ideal for kids. 8-person hot tub, fire pit, gas grill, Blackstone griddle, game room, full kitchen. Multiple guests report it handles large groups without anyone feeling crowded. About 20–25 min drive to Luray and all trailheads. Listed on <a href="https://urldefense.com/v3/__https://www.tripforth.com/rentals/hensley-hollow-lodge-of-elkton__;!!NZvER7FxgEiBAiR_!qQUY7MpBwvxYP27OOGZXy3z3jhHtv4Iszl80UH4X49--i-0ugM8xlp5MInBpmcqqgaJr3WVHqjFzJFQPqQJBw73tunag-FvHMw$" target="_blank">TripForth</a>, VRBO (#46072), and Airbnb.</div>
     </div>
   </div>
 
-</div>
-
-<!-- ── WHERE WE STAY ──────────────────────────────────────────────────────── -->
-<div id="stay" class="panel">
-  <p align="justify">One large lodge for our group — 2 👶🏻, 5 👴🏻👵🏻, 6 🧒🏻, 5 💑🏻, 4 👨🏻👩🏻 — that also serves as the shared gathering space for all meals and evenings.</p>
-
-  <div class="stay-item">
-    <div class="stay-name">Hensley Hollow Lodge &mdash; Elkton, VA</div>
-    <div class="stay-detail">7 bedrooms &middot; 4 bathrooms &middot; sleeps up to 22 &middot; 5 private acres &middot; ★ 4.9</div>
-    <div class="stay-desc">A 4,000+ sq ft log home with panoramic Blue Ridge Mountain views. Main-level king suites with private decks, plus a loft with queen and twin beds — ideal for kids. 8-person hot tub, fire pit, gas grill, Blackstone griddle, game room, full kitchen. Multiple guests report it handles large groups without anyone feeling crowded. About 20–25 min drive to Luray and all trailheads. Listed on <a href="https://urldefense.com/v3/__https://www.tripforth.com/rentals/hensley-hollow-lodge-of-elkton__;!!NZvER7FxgEiBAiR_!qQUY7MpBwvxYP27OOGZXy3z3jhHtv4Iszl80UH4X49--i-0ugM8xlp5MInBpmcqqgaJr3WVHqjFzJFQPqQJBw73tunag-FvHMw$" target="_blank">TripForth</a>, VRBO (#46072), and Airbnb.</div>
+  <!-- ── LOOK OUT FOR ──────────────────────────────────────────────────────── -->
+  <div id="book" class="panel">
+    <p class="muted"><strong>We will use our WhatsApp group for day-of coordination. Each morning, one trip lead sends a quick note with the day's plan, meeting times, and any logistics. That's all the structure needed — the evenings take care of themselves.</strong></p>
+    <p align="center">🌿 <strong>See you in Pittsburgh on June 26th</strong> 🌿</p>
   </div>
-</div>
 
-<!-- ── BOOK THESE NOW ──────────────────────────────────────────────────────── -->
-<div id="book" class="panel">
-  <p class="muted"><strong>We will use our WhatsApp group for day-of coordination. Each morning, one trip lead sends a quick note with the day's plan, meeting times, and any logistics. That's all the structure needed — the evenings take care of themselves.</strong></p>
-  <p align="center">🌿 <strong>See you in Pittsburgh on June 26th</strong> 🌿</p>
-</div>
+  <!-- ── MEALS ──────────────────────────────────────────────────────────────── -->
+  <div id="meals" class="panel">
+    <!-- PIN gate -->
+    <div id="m-gate" class="m-gate">
+      <div style="font-size:20px">🔒</div>
+      <div class="m-gate-title">Meal planners only</div>
+      <div class="m-gate-sub">Enter the PIN to access meal planning &amp; grocery management</div>
+      <div class="pin-dots">
+        <div class="pin-dot" id="pd0"></div>
+        <div class="pin-dot" id="pd1"></div>
+        <div class="pin-dot" id="pd2"></div>
+        <div class="pin-dot" id="pd3"></div>
+      </div>
+      <div class="keypad">
+        <button class="kbtn" onclick="pk('1')">1</button>
+        <button class="kbtn" onclick="pk('2')">2</button>
+        <button class="kbtn" onclick="pk('3')">3</button>
+        <button class="kbtn" onclick="pk('4')">4</button>
+        <button class="kbtn" onclick="pk('5')">5</button>
+        <button class="kbtn" onclick="pk('6')">6</button>
+        <button class="kbtn" onclick="pk('7')">7</button>
+        <button class="kbtn" onclick="pk('8')">8</button>
+        <button class="kbtn" onclick="pk('9')">9</button>
+        <button class="kbtn del" onclick="pd()">&#9003;</button>
+        <button class="kbtn k0" onclick="pk('0')">0</button>
+      </div>
+      <div class="pin-err" id="pin-err"></div>
+      <div class="pin-hint">Default PIN: 2626 &nbsp;·&nbsp; Change in Settings after login</div>
+    </div>
 
+    <!-- App -->
+    <div id="m-app" class="m-app">
+      <div class="m-top">
+        <div class="m-top-left">
+          <span class="m-top-title">Meal planner</span>
+        </div>
+        <div class="m-top-btns">
+          <button class="ibtn" onclick="openS()">⚙ Settings</button>
+          <button class="ibtn" onclick="doLock()">🔒 Lock</button>
+        </div>
+      </div>
+
+      <div class="dtabs" id="dtabs"></div>
+      <div id="dpanels"></div>
+
+      <div class="groc-wrap">
+        <div class="groc-top">
+          <div class="m-sec-lbl">Grocery list</div>
+          <div style="display:flex;gap:6px">
+            <button class="ibtn" onclick="clearChecked()">Clear checked</button>
+            <button class="ibtn" onclick="openExport()">Export</button>
+          </div>
+        </div>
+        <div class="groc-add">
+          <input type="text" id="gi" placeholder="Add item (e.g. Roma tomatoes)" onkeydown="if(event.key==='Enter')addG()">
+          <select id="gcat">
+            <option value="Produce">Produce</option>
+            <option value="Grains & Legumes">Grains &amp; Legumes</option>
+            <option value="Dairy Alternatives">Dairy Alternatives</option>
+            <option value="Pantry">Pantry</option>
+            <option value="Snacks & Drinks">Snacks &amp; Drinks</option>
+            <option value="Spices & Condiments">Spices &amp; Condiments</option>
+            <option value="Other">Other</option>
+          </select>
+          <button onclick="addG()">+ Add</button>
+        </div>
+        <div id="glist"></div>
+      </div>
+    </div>
+
+    <!-- Settings modal -->
+    <div class="modal-bg" id="modal">
+      <div class="modal-box">
+        <h3>Settings</h3>
+        <div class="msec">
+          <div class="m-sec-lbl" style="margin-bottom:8px">Meal planners</div>
+          <div class="chips" id="pchips"></div>
+          <div class="madd">
+            <input type="text" id="ni" placeholder="Add person's name" onkeydown="if(event.key==='Enter')addP()">
+            <button onclick="addP()">+ Add</button>
+          </div>
+          <div class="mmsg" id="pmsg"></div>
+        </div>
+        <div class="msec">
+          <div class="m-sec-lbl" style="margin-bottom:8px">Change PIN</div>
+          <div class="pin-row">
+            <input type="password" id="np" placeholder="New PIN" maxlength="8" inputmode="numeric">
+            <input type="password" id="cp2" placeholder="Confirm" maxlength="8" inputmode="numeric">
+            <button onclick="savePin()">Save</button>
+          </div>
+          <div class="mmsg" id="pinmsg"></div>
+        </div>
+        <div class="msec">
+          <div class="m-sec-lbl" style="margin-bottom:8px">Export / copy list</div>
+          <textarea class="exp-area" id="expa" readonly placeholder="Click Generate…"></textarea>
+          <div class="exp-btns">
+            <button onclick="genExp()">Generate</button>
+            <button onclick="copyExp()">Copy</button>
+          </div>
+        </div>
+        <div class="mfooter"><button onclick="closeS()">Close</button></div>
+      </div>
+    </div>
+  </div><!-- end #meals -->  
 </main>
 
 <script>
